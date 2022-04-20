@@ -1,0 +1,43 @@
+{
+  "mainMenu": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Discover",
+      "url": "/discover"
+    },
+    {
+      "name": "Market",
+      "url": "/market"
+    },
+    {
+      "name": "Collections",
+      "subMenu": [
+        {
+          "icon": "developer",
+          "title": "Developer",
+          "description": "Start developement easly",
+          "url": "/developer"
+        },
+        {
+          "icon": "designer",
+          "title": "Designer",
+          "description": "Start design easly",
+          "url": "/designer"
+        },
+        {
+          "icon": "graphic",
+          "title": "Unicorn",
+          "description": "Start UX/UI design easly",
+          "url": "/unicorn"
+        }
+      ]
+    },
+    {
+      "name": "Artists",
+      "url": "/artists"
+    }
+  ]
+}
