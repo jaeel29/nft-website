@@ -2,18 +2,6 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang='en'>
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -37,5 +25,18 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html lang='en'>
+        <Head />
+        <body>
+          <div id='modal-root'></div>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

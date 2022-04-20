@@ -106,15 +106,17 @@ const GlobaleStyle = createGlobalStyle`${css`
     width: 100%;
   }
 
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px */
+  }
+
   *,
   *::before,
   *::after {
     box-sizing: inherit;
-  }
-
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%; /* 10px */
+    margin: 0;
+    padding: 0;
   }
 
   body {

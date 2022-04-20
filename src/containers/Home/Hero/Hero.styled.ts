@@ -1,15 +1,23 @@
 import { FONT_PJS } from '@constants';
+import { Container } from '@styles/Blocks/Container';
+import { laptop } from 'src/constants/Media-queries';
 import styled from 'styled-components';
-import { theme } from '../Theme';
+import { theme } from '../../../styles/Theme';
 
-export const HomeStyled = styled.section``;
+export const HeroStyled = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-export const HomeContainer = styled.div`
-  /* outline: 2px solid red; */
+export const HeroContainer = styled.div`
+  ${Container}
   position: relative;
   padding: 80px 0;
   display: flex;
   justify-content: center;
+  height: calc(100vh - 70px);
+  /* outline: 2px solid red; */
 `;
 
 export const LeftSide = styled.div`
@@ -48,6 +56,25 @@ export const HeroHeaderTitles = styled.div`
       bottom: 18px;
       left: 130px;
     }
+
+    @media only screen and (max-width: ${laptop}) {
+      .hero-title {
+        font-size: 48px;
+        width: 100%;
+        line-height: 1.4;
+        letter-spacing: 1px;
+      }
+
+      .icon-1 {
+        right: 30px;
+        top: 10px;
+      }
+
+      .icon-2 {
+        bottom: 15px;
+        left: 110px;
+      }
+    }
   }
 
   .hero-paragraph {
@@ -62,10 +89,9 @@ export const ActionButtons = styled.div`
 `;
 
 export const RightSide = styled.div`
-  /* outline: 2px solid blue; */
-  height: 772px;
   width: 100%;
   flex-grow: 1;
+  overflow: hidden;
 
   [class^='image-'] {
     position: absolute;
@@ -74,12 +100,24 @@ export const RightSide = styled.div`
 
   .image-1 {
     top: -70px;
-    right: -90px;
+    right: -50px;
+
+    @media only screen and (max-width: ${laptop}) {
+      top: -130px;
+      right: -70px;
+      transform: scale(0.9);
+    }
   }
 
   .image-2 {
     bottom: 0;
     left: 300px;
+
+    @media only screen and (max-width: ${laptop}) {
+      left: 150px;
+      bottom: -30px;
+      transform: scale(0.9);
+    }
   }
 
   .image-star-icon {
@@ -121,6 +159,10 @@ export const RightSide = styled.div`
         letter-spacing: 0.7;
         color: ${theme.gray};
       }
+    }
+
+    @media only screen and (max-width: ${laptop}) {
+      right: 80px;
     }
   }
 `;

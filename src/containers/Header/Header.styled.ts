@@ -1,12 +1,16 @@
+import { Container } from '@styles/Blocks/Container';
 import { theme } from '@styles/Theme';
 import Link from 'next/link';
+import { laptop } from 'src/constants/Media-queries';
 import styled, { css } from 'styled-components';
 
-export const HeaderStyle = styled.header`
+export const HeaderStyles = styled.div``;
+
+export const HeaderContainer = styled.header`
+  ${Container}
   height: 70px;
   display: flex;
   align-items: center;
-  /* background-color: ${theme['main-Light']}; */
   border-bottom: 1px solid ${theme['main-Light']};
 
   .image {
@@ -15,7 +19,13 @@ export const HeaderStyle = styled.header`
   }
 `;
 
-export const Nav = styled.nav``;
+export const Nav = styled.nav`
+  display: block;
+
+  @media only screen and (max-width: ${laptop}) {
+    display: none;
+  }
+`;
 
 export const NavList = styled.ul`
   display: flex;
@@ -45,7 +55,7 @@ export const DropdownMenu = styled.div`
       background-color: ${theme['main-Light']};
       transform: rotate(45deg);
       top: -6px;
-      left: 16px;
+      left: 52px;
       border-radius: 2px;
       border-top: 1px solid ${theme.main};
       border-left: 1px solid ${theme.main};
@@ -101,19 +111,87 @@ export const NavItemIcon = styled(NavItem)<{ visibleSubmenu?: boolean }>`
 `;
 
 export const RightStyle = styled.div`
+  display: flex;
   margin-left: auto;
+
+  .calendar-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 10%;
+    transition: all 0.2s ease-out;
+    margin-right: 12px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${theme.main};
+      border-radius: 50%;
+    }
+  }
+`;
+
+export const BurgerIcon = styled.button<{ activeHeader: boolean }>`
   width: 36px;
   height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border-radius: 10%;
-  transition: all 0.2s ease-out;
-  cursor: pointer;
+  display: none;
+  position: relative;
 
-  &:hover {
-    background-color: ${theme.main};
-    border-radius: 50%;
+  @media only screen and (max-width: ${laptop}) {
+    display: block;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 6px;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      transition: transform 0.2s ease-out;
+      background: ${theme.neutral1};
+      z-index: 101;
+    }
+
+    &::before {
+      transform: translateY(-4px);
+    }
+
+    &::after {
+      transform: translateY(4px);
+    }
+
+    ${({ activeHeader }) =>
+      activeHeader &&
+      css`
+        &::before {
+          transform: translateY(0) rotate(-45deg);
+        }
+
+        &::after {
+          transform: translateY(0) rotate(45deg);
+        }
+      `}
   }
+`;
+
+export const NavbarMobile = styled.div<{ activeHeader: boolean }>`
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: ${theme['main-Light']};
+  transition: all 0.3 ease-out;
+
+  ${({ activeHeader }) =>
+    activeHeader &&
+    css`
+      display: block;
+    `}
 `;
