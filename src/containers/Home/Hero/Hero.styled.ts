@@ -139,7 +139,7 @@ export const RightSide = styled.div`
     top: -70px;
     right: -50px;
     z-index: 12;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 
     @media only screen and (max-width: ${Breakpoints.laptop}) {
       top: -130px;

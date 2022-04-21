@@ -46,7 +46,7 @@ const Header = () => {
           <Image src={Logo} width={36} height={36} alt='Logo' />
         </div>
 
-        <Nav>
+        <Nav activeHeader={activeHeader}>
           <NavList>
             {Menu.mainMenu.map((item, index) =>
               item.subMenu ? (
@@ -87,10 +87,6 @@ const Header = () => {
           <BurgerIcon activeHeader={activeHeader} onClick={toggleHeader} />
         </RightStyle>
       </HeaderContainer>
-
-      <NavbarMobile activeHeader={activeHeader}>
-        <h1>Navbar here</h1>
-      </NavbarMobile>
 
       {modalIsOpen && (
         <Modal onClose={() => setModalIsOpen(false)}>

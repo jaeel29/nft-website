@@ -3,12 +3,12 @@ import { createGlobalStyle, css } from 'styled-components';
 import { theme } from './Theme';
 
 const GlobaleStyle = createGlobalStyle`${css`
-  @font-face {
+  /* @font-face {
     font-family: ${FONT_INTER};
     src: url('/fonts/Inter/Inter-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -16,7 +16,7 @@ const GlobaleStyle = createGlobalStyle`${css`
     src: url('/fonts/Inter/Inter-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -24,7 +24,7 @@ const GlobaleStyle = createGlobalStyle`${css`
     src: url('/fonts/Inter/Inter-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -32,7 +32,7 @@ const GlobaleStyle = createGlobalStyle`${css`
     src: url('/fonts/Inter/Inter-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -40,8 +40,8 @@ const GlobaleStyle = createGlobalStyle`${css`
     src: url('/fonts/PlusJakartaSans/PlusJakartaSans-ExtraBold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
-  }
+    font-display: fallback;
+  } */
 
   // prettier-ignore
   html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5,

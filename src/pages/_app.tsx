@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import '@styles/fonts.css';
 import GlobaleStyle from '@styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/Theme';

@@ -11,6 +11,8 @@ function useOnClickOutside<T extends HTMLElement = HTMLElement>(
   };
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     document.addEventListener('click', handleClick);
 
     return () => {

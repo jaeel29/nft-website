@@ -24,14 +24,6 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Nav = styled.nav`
-  display: block;
-
-  @media only screen and (max-width: ${Breakpoints.tablet}) {
-    display: none;
-  }
-`;
-
 export const NavList = styled.ul`
   display: flex;
   align-items: center;
@@ -113,6 +105,47 @@ export const NavItemIcon = styled(NavItem)<{ visibleSubmenu?: boolean }>`
         transform: rotate(180deg);
       }
     `}
+`;
+
+export const Nav = styled.nav<{ activeHeader: boolean }>`
+  display: block;
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    opacity: 0;
+
+    ${({ activeHeader }) =>
+      activeHeader &&
+      css`
+        opacity: 1;
+        position: fixed;
+        top: 10px;
+        right: 15px;
+        left: 15px;
+        border-radius: 14px;
+        background-color: white;
+        z-index: 20;
+        padding: 20px;
+        box-shadow: 0px 18px 78px rgba(15, 30, 50, 0.1),
+          0px 5.46664px 15.8807px rgba(15, 30, 50, 0.0380155);
+
+        ${NavList} {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+
+          ${NavItem} {
+            border-radius: 8px;
+            padding: 10px;
+            color: ${theme.neutral1};
+            font-size: 16px;
+            font-weight: 400;
+            transition: all 0.2s ease-out;
+            cursor: pointer;
+          }
+        }
+      `}
+  }
 `;
 
 export const RightStyle = styled.div`
