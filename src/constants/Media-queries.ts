@@ -1,4 +1,6 @@
-export const mobile = '375px';
-export const tablet = '768px';
-export const laptop = '1024px';
-export const desktop = '1440px';
+export const Breakpoints = {
+  mobile: '375px',
+  tablet: '768px',
+  laptop: '1024px',
+  desktop: '1440px',
+};

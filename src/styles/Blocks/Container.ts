@@ -1,4 +1,4 @@
-import { laptop } from 'src/constants/Media-queries';
+import { Breakpoints } from 'src/constants/Media-queries';
 import { css } from 'styled-components';
 
 export const Container = css`
@@ -7,8 +7,12 @@ export const Container = css`
   margin: 0 auto;
   transition: max-width 0.3s ease-out;
 
-  @media only screen and (max-width: ${laptop}) {
+  @media only screen and (max-width: ${Breakpoints.laptop}) {
     max-width: 940px;
     transition: max-width 0.3s ease-out;
+  }
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    max-width: 710px;
   }
 `;

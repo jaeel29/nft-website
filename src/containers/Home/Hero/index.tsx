@@ -28,6 +28,7 @@ const Hero = () => {
           <HeroHeaderTitles>
             <div className='hero'>
               <h1 className='hero-title'>Choose your first nft</h1>
+
               <div className='icon-1'>
                 <CircleIcon />
               </div>
@@ -52,7 +53,7 @@ const Hero = () => {
 
         <RightSide>
           <div className='image-1'>
-            <Image src={Image1} width={680} height={588} alt='NFT photo 1' />
+            <Image src={Image1} width={532} height={500} alt='NFT photo 1' />
           </div>
           <div className='image-2'>
             <Image src={Image2} width={680} height={588} alt='NFT photo 2' />

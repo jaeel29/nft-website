@@ -7,7 +7,6 @@ const Home: NextPage = () => {
   return (
     <PageLayout>
       <Hero />
-
       <TrustedCompanies />
     </PageLayout>
   );

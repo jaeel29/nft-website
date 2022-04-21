@@ -1,17 +1,22 @@
 import { Container } from '@styles/Blocks/Container';
 import { theme } from '@styles/Theme';
 import Link from 'next/link';
-import { laptop } from 'src/constants/Media-queries';
+import { Breakpoints } from 'src/constants/Media-queries';
 import styled, { css } from 'styled-components';
 
-export const HeaderStyles = styled.div``;
+export const HeaderStyles = styled.div`
+  /* position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white; */
+`;
 
 export const HeaderContainer = styled.header`
   ${Container}
   height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid ${theme['main-Light']};
 
   .image {
     display: flex;
@@ -22,7 +27,7 @@ export const HeaderContainer = styled.header`
 export const Nav = styled.nav`
   display: block;
 
-  @media only screen and (max-width: ${laptop}) {
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -139,7 +144,7 @@ export const BurgerIcon = styled.button<{ activeHeader: boolean }>`
   display: none;
   position: relative;
 
-  @media only screen and (max-width: ${laptop}) {
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
     display: block;
 
     &::before,

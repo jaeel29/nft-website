@@ -1,6 +1,6 @@
 import { FONT_PJS } from '@constants';
 import { Container } from '@styles/Blocks/Container';
-import { laptop } from 'src/constants/Media-queries';
+import { Breakpoints } from 'src/constants/Media-queries';
 import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
 
@@ -8,6 +8,7 @@ export const HeroStyled = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* padding-top: 70px; */
 `;
 
 export const HeroContainer = styled.div`
@@ -17,12 +18,23 @@ export const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   height: calc(100vh - 70px);
-  /* outline: 2px solid red; */
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftSide = styled.div`
   width: 60%;
   margin-top: 40px;
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    width: auto;
+  }
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    margin: 0 90px;
+  }
 `;
 
 export const HeroHeaderTitles = styled.div`
@@ -30,6 +42,7 @@ export const HeroHeaderTitles = styled.div`
   flex-direction: column;
   gap: 24px;
   margin-bottom: 36px;
+  /* border: 2px solid red; */
 
   .hero {
     position: relative;
@@ -41,6 +54,20 @@ export const HeroHeaderTitles = styled.div`
       width: 80%;
       line-height: 1.4;
       letter-spacing: 1.5px;
+
+      @media only screen and (max-width: ${Breakpoints.laptop}) {
+        font-size: 48px;
+        width: 100%;
+        line-height: 1.4;
+        letter-spacing: 1px;
+      }
+
+      @media only screen and (max-width: ${Breakpoints.tablet}) {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        line-height: 1.3;
+      }
     }
 
     [class^='icon-'] {
@@ -50,29 +77,31 @@ export const HeroHeaderTitles = styled.div`
     .icon-1 {
       right: 110px;
       top: 15px;
+
+      @media only screen and (max-width: ${Breakpoints.laptop}) {
+        right: 30px;
+        top: 10px;
+      }
+
+      @media only screen and (max-width: ${Breakpoints.tablet}) {
+        /* display: none; */
+        top: -50px;
+        right: -30px;
+      }
     }
 
     .icon-2 {
       bottom: 18px;
       left: 130px;
-    }
 
-    @media only screen and (max-width: ${laptop}) {
-      .hero-title {
-        font-size: 48px;
-        width: 100%;
-        line-height: 1.4;
-        letter-spacing: 1px;
-      }
-
-      .icon-1 {
-        right: 30px;
-        top: 10px;
-      }
-
-      .icon-2 {
+      @media only screen and (max-width: ${Breakpoints.laptop}) {
         bottom: 15px;
         left: 110px;
+      }
+
+      @media only screen and (max-width: ${Breakpoints.tablet}) {
+        left: auto;
+        right: 50px;
       }
     }
   }
@@ -80,12 +109,20 @@ export const HeroHeaderTitles = styled.div`
   .hero-paragraph {
     font-size: 16px;
     line-height: 1.5;
+
+    @media only screen and (max-width: ${Breakpoints.tablet}) {
+      text-align: center;
+    }
   }
 `;
 
 export const ActionButtons = styled.div`
   display: flex;
   gap: 8px;
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    justify-content: center;
+  }
 `;
 
 export const RightSide = styled.div`
@@ -101,11 +138,17 @@ export const RightSide = styled.div`
   .image-1 {
     top: -70px;
     right: -50px;
+    z-index: 12;
+    border: 2px solid red;
 
-    @media only screen and (max-width: ${laptop}) {
+    @media only screen and (max-width: ${Breakpoints.laptop}) {
       top: -130px;
-      right: -70px;
+      right: -60px;
       transform: scale(0.9);
+    }
+
+    @media only screen and (max-width: ${Breakpoints.tablet}) {
+      display: none;
     }
   }
 
@@ -113,10 +156,14 @@ export const RightSide = styled.div`
     bottom: 0;
     left: 300px;
 
-    @media only screen and (max-width: ${laptop}) {
+    @media only screen and (max-width: ${Breakpoints.laptop}) {
       left: 150px;
       bottom: -30px;
       transform: scale(0.9);
+    }
+
+    @media only screen and (max-width: ${Breakpoints.tablet}) {
+      left: 0;
     }
   }
 
@@ -124,6 +171,10 @@ export const RightSide = styled.div`
     top: 45%;
     right: 30%;
     transform: translateY(-50%);
+
+    @media only screen and (max-width: ${Breakpoints.tablet}) {
+      display: none;
+    }
   }
 
   .giveMore {
@@ -161,8 +212,12 @@ export const RightSide = styled.div`
       }
     }
 
-    @media only screen and (max-width: ${laptop}) {
+    @media only screen and (max-width: ${Breakpoints.laptop}) {
       right: 80px;
+    }
+
+    @media only screen and (max-width: ${Breakpoints.tablet}) {
+      display: none;
     }
   }
 `;
