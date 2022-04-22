@@ -1,5 +1,6 @@
 import { Container } from '@styles/Blocks/Container';
 import { theme } from '@styles/Theme';
+import { Breakpoints } from 'src/constants/Media-queries';
 import styled from 'styled-components';
 
 export const TrustedStyles = styled.section`
@@ -8,10 +9,10 @@ export const TrustedStyles = styled.section`
 
 export const TrustedContainer = styled.div`
   ${Container}
-  padding: 45px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 48px 0;
 
   .icon {
     /* outline: 2px solid red; */
@@ -24,6 +25,15 @@ export const TrustedContainer = styled.div`
 
     &:hover {
       filter: grayscale(100%);
+    }
+  }
+
+  @media only screen and (max-width: ${Breakpoints.tablet}) {
+    gap: 24px;
+    flex-wrap: wrap;
+
+    .icon {
+      transform: scale(0.8);
     }
   }
 `;

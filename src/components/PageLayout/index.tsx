@@ -6,11 +6,9 @@ import { PageLayoutStyle } from './PageLayout.styled';
 const PageLayout = ({ children }: { children: ReactNode | ReactNode[] }) => {
   return (
     <>
-      <PageLayoutStyle>
-        <Header />
-        {children}
-        {/* <Footer /> */}
-      </PageLayoutStyle>
+      <Header />
+      {children}
+      {/* <Footer /> */}
     </>
   );
 };

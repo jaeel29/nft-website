@@ -11,10 +11,6 @@ import {
   RightSide,
 } from './Hero.styled';
 
-//^ Images
-import Image1 from '@assets/images/Image-1.png';
-import Image2 from '@assets/images/Image-2.png';
-
 //^ Icons
 import ArrowBgIcon from '@assets/icons/ArrowBgIcon';
 import CircleIcon from '@assets/icons/CircleIcon';
@@ -53,13 +49,13 @@ const Hero = () => {
 
         <RightSide>
           <div className='image-1'>
-            <Image src={Image1} width={532} height={500} alt='NFT photo 1' />
+            <Image src={'/images/Image-1.png'} alt='NFT photo 1' layout='fill' objectFit='cover' />
           </div>
           <div className='image-2'>
-            <Image src={Image2} width={680} height={588} alt='NFT photo 2' />
+            <Image src={'/images/Image-2.png'} alt='NFT photo 2' layout='fill' objectFit='cover' />
           </div>
 
-          <div className='image-star-icon'>
+          <div className='star-icon'>
             <StarIcon />
           </div>
 

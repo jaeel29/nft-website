@@ -3,6 +3,7 @@ import PageLayout from '@components/PageLayout';
 import Hero from '@containers/Home/Hero';
 import TrustedCompanies from '@containers/Home/TrustedCompanies';
 import Head from 'next/head';
+import ImageTesting from '@containers/Home/ImageTesting';
 
 const Home: NextPage = () => {
   return (
@@ -34,6 +35,7 @@ const Home: NextPage = () => {
       <PageLayout>
         <Hero />
         <TrustedCompanies />
+        <ImageTesting />
       </PageLayout>
     </>
   );

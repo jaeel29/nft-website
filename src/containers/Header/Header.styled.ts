@@ -119,7 +119,7 @@ export const Nav = styled.nav<{ activeHeader: boolean }>`
         opacity: 1;
         position: fixed;
         top: 10px;
-        right: 15px;
+        right: 30px;
         left: 15px;
         border-radius: 14px;
         background-color: white;

@@ -4,17 +4,12 @@ import { Breakpoints } from 'src/constants/Media-queries';
 import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
 
-export const HeroStyled = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* padding-top: 70px; */
-`;
+export const HeroStyled = styled.section``;
 
 export const HeroContainer = styled.div`
   ${Container}
   position: relative;
-  padding: 80px 0;
+  padding: 80px 20px;
   display: flex;
   justify-content: center;
   height: calc(100vh - 70px);
@@ -128,23 +123,24 @@ export const ActionButtons = styled.div`
 export const RightSide = styled.div`
   width: 100%;
   flex-grow: 1;
-  overflow: hidden;
+  /* border: 2px solid red; */
 
   [class^='image-'] {
-    position: absolute;
     pointer-events: none;
+    width: 280px;
+    height: 330px;
+    position: relative;
+    /* border: 2px solid red; */
   }
 
   .image-1 {
-    top: -70px;
-    right: -50px;
-    z-index: 12;
-    /* border: 2px solid red; */
+    top: -160px;
+    right: -260px;
 
     @media only screen and (max-width: ${Breakpoints.laptop}) {
       top: -130px;
-      right: -60px;
-      transform: scale(0.9);
+      right: -20px;
+      transform: scale(0.8);
     }
 
     @media only screen and (max-width: ${Breakpoints.tablet}) {
@@ -153,8 +149,8 @@ export const RightSide = styled.div`
   }
 
   .image-2 {
-    bottom: 0;
-    left: 300px;
+    bottom: -190px;
+    left: auto;
 
     @media only screen and (max-width: ${Breakpoints.laptop}) {
       left: 150px;
@@ -167,9 +163,10 @@ export const RightSide = styled.div`
     }
   }
 
-  .image-star-icon {
+  .star-icon {
+    position: absolute;
     top: 45%;
-    right: 30%;
+    right: 38%;
     transform: translateY(-50%);
 
     @media only screen and (max-width: ${Breakpoints.tablet}) {
@@ -185,7 +182,7 @@ export const RightSide = styled.div`
 
   .statistics {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 40%;
     display: flex;
     flex-direction: column;
@@ -213,7 +210,7 @@ export const RightSide = styled.div`
     }
 
     @media only screen and (max-width: ${Breakpoints.laptop}) {
-      right: 80px;
+      right: 20px;
     }
 
     @media only screen and (max-width: ${Breakpoints.tablet}) {

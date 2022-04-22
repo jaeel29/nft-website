@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   BurgerIcon,
   DropdownMenu,
@@ -12,13 +12,11 @@ import {
   NavList,
   RightStyle,
 } from './Header.styled';
-import Logo from '@assets/svg/Logo.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import CalendarIcon from '@assets/icons/CalendarIcon';
 import Menu from '@config/menus.json';
 import Icon from '@components/UI/Icon';
-import useClickOutside from '@hooks/useOnClickOutside';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 import SubmenuItem from './SubmenuItem';
 import ModalX from './ModalX';
@@ -43,7 +41,7 @@ const Header = () => {
     <HeaderStyles>
       <HeaderContainer>
         <div className='image'>
-          <Image src={Logo} width={36} height={36} alt='Logo' />
+          <Image src={'/Logo.svg'} width={36} height={36} alt='Logo' />
         </div>
 
         <Nav activeHeader={activeHeader}>
