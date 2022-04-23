@@ -10,11 +10,14 @@ export const Container = css`
 
   @media only screen and (max-width: ${Breakpoints.laptop}) {
     max-width: 1000px;
-    width: 100%;
     transition: max-width 0.3s ease-out;
   }
 
   @media only screen and (max-width: ${Breakpoints.tablet}) {
     max-width: 730px;
+  }
+
+  @media only screen and (max-width: ${Breakpoints.mobile}) {
+    max-width: 325px;
   }
 `;

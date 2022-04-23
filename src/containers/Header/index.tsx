@@ -5,6 +5,7 @@ import {
   DropdownMenu,
   HeaderContainer,
   HeaderStyles,
+  ImageContainer,
   Nav,
   NavbarMobile,
   NavItem,
@@ -40,9 +41,15 @@ const Header = () => {
   return (
     <HeaderStyles>
       <HeaderContainer>
-        <div className='image'>
-          <Image src={'/Logo.svg'} width={36} height={36} alt='Logo' />
-        </div>
+        <ImageContainer>
+          <Image
+            src={'/Logo.svg'}
+            alt='Logo'
+            layout='fill'
+            objectFit='cover'
+            objectPosition='center'
+          />
+        </ImageContainer>
 
         <Nav activeHeader={activeHeader}>
           <NavList>

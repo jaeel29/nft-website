@@ -1,4 +1,5 @@
 import { theme } from '@styles/Theme';
+import { Breakpoints } from 'src/constants/Media-queries';
 import styled from 'styled-components';
 
 export const GiveMoreStyles = styled.div`
@@ -49,5 +50,9 @@ export const GiveMoreStyles = styled.div`
       color: ${theme['main-Light']};
       /* width: 70%; */
     }
+  }
+
+  @media only screen and (max-width: ${Breakpoints.laptop}) {
+    display: none;
   }
 `;

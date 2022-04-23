@@ -29,11 +29,12 @@ export const TrustedContainer = styled.div`
   }
 
   @media only screen and (max-width: ${Breakpoints.tablet}) {
-    gap: 24px;
-    flex-wrap: wrap;
-
     .icon {
-      transform: scale(0.8);
+      transform: scale(0.7);
     }
+  }
+
+  @media only screen and (max-width: ${Breakpoints.mobile}) {
+    overflow-x: scroll;
   }
 `;

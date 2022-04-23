@@ -4,13 +4,7 @@ import Link from 'next/link';
 import { Breakpoints } from 'src/constants/Media-queries';
 import styled, { css } from 'styled-components';
 
-export const HeaderStyles = styled.div`
-  /* position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: white; */
-`;
+export const HeaderStyles = styled.div``;
 
 export const HeaderContainer = styled.header`
   ${Container}
@@ -18,10 +12,20 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
 
-  .image {
-    display: flex;
-    margin-right: 48px;
+  @media only screen and (max-width: ${Breakpoints.mobile}) {
+    justify-content: space-between;
   }
+
+  @media only screen and (max-width: ${Breakpoints.mobile}) {
+    padding: 0;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-right: 48px;
 `;
 
 export const NavList = styled.ul`
@@ -111,15 +115,15 @@ export const Nav = styled.nav<{ activeHeader: boolean }>`
   display: block;
 
   @media only screen and (max-width: ${Breakpoints.tablet}) {
-    opacity: 0;
+    display: none;
 
     ${({ activeHeader }) =>
       activeHeader &&
       css`
-        opacity: 1;
-        position: fixed;
+        display: block;
+        position: absolute;
         top: 10px;
-        right: 30px;
+        right: 15px;
         left: 15px;
         border-radius: 14px;
         background-color: white;

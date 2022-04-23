@@ -29,13 +29,13 @@ const Home: NextPage = () => {
         <meta name='twitter:description' content={metaDescription} /> */}
 
         <link rel='shortcut icon' href='/nft-favicon.png' type='image/x-icon' />
-        <link rel='icon' href='/favicon.png' />
+        {/* <link rel='icon' href='/favicon.png' /> */}
       </Head>
 
       <PageLayout>
         <Hero />
         <TrustedCompanies />
-        <ImageTesting />
+        {/* <ImageTesting /> */}
       </PageLayout>
     </>
   );
