@@ -13,7 +13,6 @@ const Home: NextPage = () => {
         <title>NFT Marketplace</title>
 
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
-        <meta name='keyword' content='' />
         <meta name='author' content='Jaber' />
         <meta name='description' content='The best NFT Marketplace' />
 
